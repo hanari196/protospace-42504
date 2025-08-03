@@ -1,0 +1,25 @@
+<div class="card">
+<!-- 画像 -->
+<%= link_to prototype_path(prototype) do %>
+  <% if prototype.image.attached? %>
+    <%= image_tag prototype.image, class: :card__img %>
+  <% else %>
+    <%= image_tag "no_image.jpg", class: :card__img %> <!-- 代替画像 -->
+  <% end %>
+<% end %>
+
+ <% if current_user == prototype.user%>
+  <!-- link_to '削除', prototype_path(prototype), method: :delete, data: { confirm: '本当に削除しますか？', turbo: false }, class: :card__delete -->
+ <% end %>
+  <div class="card__body">
+    <!-- タイトルを詳細ページへリンク -->
+    <%= link_to prototype.title, prototype_path(prototype), class: :card__title%>
+  
+    <p class="card__summary">
+      <%= prototype.catch_copy %>
+  
+    </p>
+    <%= link_to "by #{prototype.user.name}", user_path(prototype.user), class: :card__user %>
+  
+  </div>
+</div>
