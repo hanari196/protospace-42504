@@ -6,10 +6,4 @@ const application = Application.start()
 application.debug = false
 window.Stimulus   = application
 
-import "@hotwired/turbo-rails"
-import "controllers"
-
-import Rails from "@rails/ujs"
-Rails.start()
-
 export { application }
