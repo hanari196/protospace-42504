@@ -9,6 +9,7 @@ class User < ApplicationRecord
   validates :name
   validates :occupation
   validates :position
+  validates :profile
   end
   
   has_many :prototypes, dependent: :destroy
